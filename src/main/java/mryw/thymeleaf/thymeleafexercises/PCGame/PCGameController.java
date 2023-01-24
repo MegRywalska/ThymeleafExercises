@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class PCGameController {
 
     private final PCGameService gameService;
+    private final PCGameDTO pcGameDTO;
 
 
     @GetMapping("/form-pc-game/{title}")
@@ -19,6 +20,8 @@ public class PCGameController {
 
     @PostMapping("/pc-games")
     @ResponseStatus(HttpStatus.CREATED)
-    public void creatGame(){
+    public void creatGame(@RequestBody String title, String producer, String genre, Integer minimumAge, Boolean isAAA){
+
+        .creatGame(title, producer, genre, minimumAge, isAAA);
     }
 }
